@@ -4,11 +4,12 @@
     "version": "0.0.1",
     "scripts": {
         "dev": "astro dev",
-        "check": "astro check && astro dev",
+        "check": "astro check",
         "start": "astro dev",
         "build": "astro check && astro build",
         "preview": "astro preview",
-        "astro": "astro"
+        "astro": "astro",
+        "prepare": "husky"
     },
     "dependencies": {
         "@astrojs/check": "^0.9.4",
@@ -37,8 +38,17 @@
         "typescript": "^5.7.2"
     },
     "devDependencies": {
+        "@commitlint/cli": "^19.6.1",
+        "@commitlint/config-conventional": "^19.6.0",
         "@tailwindcss/typography": "^0.5.15",
+        "husky": "^9.1.7",
+        "lint-staged": "^15.2.11",
         "prettier": "^3.3.3",
         "prettier-plugin-tailwindcss": "^0.6.8"
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
     }
 }
