@@ -23,15 +23,19 @@
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^5.0.1",
-    "@types/react": "^18.0.25",
+    "@types/react": "^19.0.2",
     "eslint": "^9.9.0",
     "prettier": "^3.0.2",
     "typescript": "^5.1.6"
   },
   "prettier": {
-    "semi": false,
+    "semi": true,
     "printWidth": 100,
-    "bracketSpacing": false,
-    "singleQuote": true
+    "bracketSpacing": true,
+    "singleQuote": true,
+    "endOfLine": "auto",
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "jsxSingleQuote": false
   }
 }

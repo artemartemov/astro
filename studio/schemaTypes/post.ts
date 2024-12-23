@@ -16,6 +16,7 @@ export const postType = defineType({
         maxLength: 96,
       },
     }),
+
     defineField({
       name: 'seo',
       title: 'SEO',
@@ -41,6 +42,7 @@ export const postType = defineType({
           name: 'alt',
           type: 'string',
           title: 'Alternative Text',
+          options: {isHighlighted: true},
         },
       ],
     }),
@@ -50,15 +52,21 @@ export const postType = defineType({
       of: [{type: 'reference', to: {type: 'category'}}],
     }),
     defineField({
-      name: 'publishedAt',
-      type: 'datetime',
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{type: 'string'}],
     }),
+
     defineField({
       name: 'body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'publishedAt',
+      type: 'datetime',
+    }),
   ],
-
   preview: {
     select: {
       title: 'title',

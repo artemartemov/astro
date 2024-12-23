@@ -2,10 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Button from '../../components/Button.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
-import PostPreview from '../../components/PostPreview.astro';
+// import PostPreview from '../../components/PostPreview.astro';
 import Subscribe from '../../components/Subscribe.astro';
-import { sortItemsByDateDesc } from '../../utils/data-utils';
-import { slugify } from '../../utils/common-utils';
+// import { sortItemsByDateDesc } from '../../utils/data-utils';
+// import { slugify } from '../../utils/common-utils';
 import PortableText from '../../components/PortableText.astro';
 
 import type { SanityDocument } from '@sanity/client';
@@ -26,7 +26,18 @@ export async function getStaticPaths() {
 }
 
 const { params } = Astro;
-const { data: post } = await loadQuery({
+const {
+    data: post
+}: {
+    data: {
+        slug: any;
+        title: string;
+        excerpt: string;
+        image: { url: string };
+        publishedAt: string;
+        body: any;
+    };
+} = await loadQuery({
     query: `*[_type == "post" && slug.current == $slug][0]`,
     params
 });
@@ -35,7 +46,7 @@ const { data: post } = await loadQuery({
 <BaseLayout
     title={post?.title ?? post.title}
     description={post?.excerpt ?? post?.excerpt}
-    image={post?.image?.url}
+    image={{ src: post?.image?.url, alt: post?.title }}
     pageType="article"
     showHeader={false}
 >
@@ -44,17 +55,6 @@ const { data: post } = await loadQuery({
             <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{post?.title}</h1>
             <div class="mt-4 text-sm">
                 <FormattedDate date={(post?.publishedAt && post.publishedAt) || ''} />
-                {
-                    //     updatedDate && (
-                    //         <>
-                    //             {' '}
-                    //             <span>
-                    //                 (Updated on <FormattedDate date={updatedDate} />)
-                    //             </span>
-                    //         </>
-                    //     )
-                    // }
-                }
             </div>
             <div class="max-w-none prose prose-dante sm:prose-lg">
                 <PortableText portableText={post?.body} />
@@ -77,7 +77,7 @@ const { data: post } = await loadQuery({
                 <Button
                     class="copy-url-button"
                     aria-label="Copy link"
-                    data-url={post?.slug?.url}
+                    data-url={post?.slug?.current}
                     data-tooltip-default="Copy link"
                     data-tooltip-success="Copied"
                     >Share</Button
