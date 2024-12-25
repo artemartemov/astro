@@ -6,7 +6,7 @@ module.exports = {
     theme: {
         fontFamily: {
             sans: ['Inter', ...defaultTheme.fontFamily.sans],
-            serif: ['Newsreader', ...defaultTheme.fontFamily.serif]
+            serif: ['Roslindale', ...defaultTheme.fontFamily.serif]
         },
         extend: {
             textColor: {
@@ -54,8 +54,9 @@ module.exports = {
                         },
                         'h1,h2,h3,h4,h5,h6': {
                             fontFamily: theme('fontFamily.serif'),
-                            fontWeight: 500
+                            fontWeight: 400
                         },
+
                         blockquote: {
                             border: 0,
                             fontFamily: theme('fontFamily.serif'),

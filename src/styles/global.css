@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+    /* Register your custom font family and tell the browser where to find it. */
+    @font-face {
+        font-family: 'Roslindale';
+        src: url('/fonts/RoslindaleVariable-VF.woff2') format('woff');
+        font-weight: 300 800;
+        font-style: normal;
+        font-display: swap;
+    }
+
     :root {
         --color-text-main: 23 23 23; /* #171717 */
         --color-bg-main: 242 241 236; /* #F2F1EC */
@@ -14,6 +23,12 @@
         --color-bg-main: 23 23 23; /* #171717 */
         --color-bg-muted: 36 36 36; /* #242424 */
         --color-border-main: 242 241 236; /* #F2F1EC */
+    }
+
+    h1 {
+        font-variation-settings:
+            'wght' 400,
+            'opsz' 28;
     }
 
     /* Cyan */
