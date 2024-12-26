@@ -1,7 +1,7 @@
 {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --max-warnings=0",
-      "prettier --write"
+      "eslint --no-warn-ignored --max-warnings=0",
+      "prettier --write --ignore-unknown"
     ],
     "**/*.{html,json,css,scss,md,mdx}": ["prettier -w"]
 }

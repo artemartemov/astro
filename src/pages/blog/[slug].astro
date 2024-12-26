@@ -52,7 +52,7 @@ const {
 >
     <article class="mb-16 sm:mb-24">
         <header class="mb-8">
-            <h1 class="text-3xl leading-tight font-serif font-black sm:text-5xl sm:leading-tight">{post?.title}</h1>
+            <h1 class="font-serif">{post?.title}</h1>
             <div class="mt-4 text-sm">
                 <FormattedDate date={(post?.publishedAt && post.publishedAt) || ''} />
             </div>
@@ -79,8 +79,7 @@ const {
                     aria-label="Copy link"
                     data-url={post?.slug?.current}
                     data-tooltip-default="Copy link"
-                    data-tooltip-success="Copied"
-                    >Share</Button
+                    data-tooltip-success="Copied">Share</Button
                 >
             </div>
         </header>

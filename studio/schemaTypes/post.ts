@@ -16,7 +16,12 @@ export const postType = defineType({
         maxLength: 96,
       },
     }),
-
+    defineField({
+      name: 'isFeatured',
+      title: 'Featured',
+      type: 'boolean',
+      initialValue: false,
+    }),
     defineField({
       name: 'seo',
       title: 'SEO',
