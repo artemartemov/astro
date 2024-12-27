@@ -43,7 +43,7 @@ const currentTag = allTags.find((tag) => tag.slug === params.slug);
             <PostPreview
                 post={{
                     title: post.data.title,
-                    slug: post.slug,
+                    slug: { current: post.slug },
                     publishDate: post.data.publishDate,
                     seo: { description: post.data.seo?.description || '' },
                     isFeatured: post.data.isFeatured,

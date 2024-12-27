@@ -5,7 +5,7 @@ module.exports = {
     darkMode: 'class',
     theme: {
         fontFamily: {
-            sans: ['Inter', ...defaultTheme.fontFamily.sans],
+            sans: ['ABCMonument', ...defaultTheme.fontFamily.sans],
             serif: ['Roslindale', ...defaultTheme.fontFamily.serif]
         },
         extend: {
@@ -50,24 +50,6 @@ module.exports = {
                             textUnderlineOffset: '2px',
                             '&:hover': {
                                 textDecorationStyle: 'solid'
-                            }
-                        },
-                        'h1,h2,h3,h4,h5,h6': {
-                            fontFamily: theme('fontFamily.serif'),
-                            fontWeight: 400
-                        },
-
-                        blockquote: {
-                            border: 0,
-                            fontFamily: theme('fontFamily.serif'),
-                            fontSize: '1.3125em',
-                            fontStyle: 'italic',
-                            fontWeight: 'normal',
-                            lineHeight: 1.4,
-                            paddingLeft: 0,
-                            '@media (min-width: theme("screens.sm"))': {
-                                fontSize: '1.66667em',
-                                lineHeight: 1.3
                             }
                         }
                     }

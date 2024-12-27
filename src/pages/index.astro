@@ -11,7 +11,7 @@ import { loadQuery } from '../../studio/lib/load-query';
 
 const { data: posts } = (await loadQuery({
     query: `*[_type == "post" && isFeatured == true] | order(publishedAt desc)`
-})) as { data: Array<{ title: string; slug: string; publishDate: Date; seo: { description: string }; isFeatured: boolean; tags: string[] }> };
+})) as { data: Array<{ title: string; slug: { current: string }; publishDate: Date; seo: { description: string }; isFeatured: boolean; tags: string[] }> };
 
 const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
 const featuredProjects = projects.filter(({ data }) => data.isFeatured);
@@ -23,7 +23,7 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
     {
         posts?.length > 0 && (
             <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 font-serif sm:mb-16 ">Writing</h2>
+                <h2 class="mb-12 font-sans sm:mb-16">Writing</h2>
                 {posts.map((post) => (
                     <PostPreview post={post} class="mb-10 sm:mb-12" headingLevel="h3" />
                 ))}
@@ -36,7 +36,7 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
     {
         featuredProjects?.length > 0 && (
             <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 font-serif sm:mb-16">Projects</h2>
+                <h2 class="mb-12 font-sans sm:mb-16">Projects</h2>
                 {featuredProjects.map((project) => (
                     <ProjectPreview project={project} class="mb-10 sm:mb-12" headingLevel="h3" />
                 ))}
