@@ -31,10 +31,10 @@ console.log(excerpt);
         <TitleTag class="font-serif font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1">
             {title}
         </TitleTag>
-        <div class="mt-1 text-sm leading-normal">
+        <div class="mt-1">
             <FormattedDate date={publishedAt} />
         </div>
-        {excerpt && <div class="mt-3 text-sm leading-normal">{excerpt}</div>}
+        {excerpt && <div class="mt-3 prose prose-dante">{excerpt}</div>}
     </div>
     <div class="hidden text-sm opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
         Read Post <ArrowRight class="fill-current w-4 h-4" />

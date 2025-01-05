@@ -78,6 +78,7 @@
     }
 
     h2 {
+        @apply prose prose-dante;
         font-variation-settings:
             'wght' 500,
             'opsz' 22;
