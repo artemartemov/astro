@@ -4,10 +4,13 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import sanity from '@sanity/astro';
 import react from '@astrojs/react';
+import vercelStatic from '@astrojs/vercel/static';
 
 // https://astro.build/config
 export default defineConfig({
     site: 'https://example.com',
+    output: 'static',
+    adapter: vercelStatic(),
     integrations: [
         mdx(),
         sitemap(),
@@ -21,7 +24,6 @@ export default defineConfig({
             apiVersion: '2024-07-24',
             studioBasePath: '/studio'
         }),
-
         react()
     ]
 });
