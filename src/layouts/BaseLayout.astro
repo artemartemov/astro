@@ -7,11 +7,14 @@ import Nav from '../components/Nav.astro';
 
 export type Props = HeadProps & { showHeader?: boolean };
 
-const { showHeader = true, ...head } = Astro.props;
+const { showHeader = false, ...head } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="antialiased break-words">
+<html
+    lang="en"
+    class="antialiased break-words"
+>
     <head>
         <BaseHead {...head} />
         <script>

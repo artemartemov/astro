@@ -51,16 +51,16 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         {
-            text: 'Case Studies',
-            href: '/projects'
-        },
-        {
-            text: 'Blog',
+            text: 'Writing',
             href: '/blog'
         },
         {
             text: 'About',
             href: '/about'
+        },
+        {
+            text: 'Contact',
+            href: '/contact'
         }
     ],
     footerNavLinks: [
@@ -80,8 +80,8 @@ const siteConfig: SiteConfig = {
         }
     ],
     hero: {
-        title: "Hey, I'm Artem! Currently designing systems at Strava",
-        text: 'I’m not here to bombard you with bells and whistles—just the good stuff: design ideas, personal reflections, and a fresh perspective on what it means to build something that lasts. My portfolio is a work in progress, much like the best of us, but that’s half the fun. If you share my fascination with simplicity and a dash of irreverent wit, then you’re in the right place.',
+        title: "Hey, I'm Artem!",
+        text: 'Design ideas, personal reflections, and a fresh perspective on what it means to build something that lasts. My portfolio is a work in progress, much like the best of us.',
         image: {
             src: '/hero.jpeg',
             alt: 'A person sitting at a desk in front of a computer'
