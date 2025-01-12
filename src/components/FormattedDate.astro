@@ -2,7 +2,20 @@
 type Props = { date: Date | string };
 
 const { date } = Astro.props;
-const dateObj = date instanceof Date ? date : new Date(date);
+let dateObj;
+
+try {
+    if (date instanceof Date) {
+        dateObj = date;
+    } else if (typeof date === 'string' && !isNaN(Date.parse(date))) {
+        dateObj = new Date(date);
+    } else {
+        throw new RangeError('Invalid time value');
+    }
+} catch (error) {
+    console.error('Invalid date provided:', date, error);
+    dateObj = new Date(); // Default to current date
+}
 ---
 
 <time datetime={dateObj.toISOString()}>
