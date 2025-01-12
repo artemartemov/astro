@@ -6,7 +6,7 @@ import siteConfig from '../data/site-config';
 const navLinks = siteConfig.headerNavLinks || [];
 ---
 
-<nav class="min-h-10 pt-4 pb-12 relative sm:min-h-14 sm:pb-24 md:pt-8">
+<nav class="min-h-10 pt-4 pb-12 relative sm:min-h-14 sm:pb-24 md:pt-12">
     {
         navLinks.length > 0 && (
             <div class="w-full max-w-2xl mx-auto relative">
@@ -18,11 +18,14 @@ const navLinks = siteConfig.headerNavLinks || [];
                 >
                     <span class="menu-toggle-icon w-6 h-px relative bg-current" />
                 </button>
-                <ul id="menu-items" class="menu flex gap-6">
+                <ul
+                    id="menu-items"
+                    class="menu flex gap-6"
+                >
                     {navLinks.map((link) => (
                         <li class="py-1">
                             <NavLink
-                                class="text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base"
+                                class="text-xl font-sans text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base"
                                 href={link.href}
                             >
                                 {link.text}
@@ -33,7 +36,7 @@ const navLinks = siteConfig.headerNavLinks || [];
             </div>
         )
     }
-    <div class="absolute right-0 top-4 z-10 md:top-8">
+    <div class="absolute right-0 top-2 z-10 md:top-8">
         <ThemeToggle />
     </div>
 </nav>

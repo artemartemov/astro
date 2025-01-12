@@ -1,7 +1,9 @@
 ---
-type Props = { date: Date | string };
+type Props = {
+    date: Date | string;
+};
 
-const { date } = Astro.props;
+const { date = new Date() } = Astro.props;
 let dateObj;
 
 try {
