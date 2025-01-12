@@ -4,7 +4,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import Hero from '../components/Hero.astro';
 import PostPreview from '../components/PostPreview.astro';
-import ProjectPreview from '../components/ProjectPreview.astro';
 import siteConfig from '../data/site-config';
 import { sortItemsByDateDesc } from '../utils/data-utils';
 import { loadQuery } from '../../studio/lib/load-query';
@@ -14,7 +13,7 @@ const { data: posts } = (await loadQuery({
 })) as { data: Array<{ title: string; slug: { current: string }; publishDate: Date; seo: { description: string }; isFeatured: boolean; tags: string[] }> };
 
 const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
-const featuredProjects = projects.filter(({ data }) => data.isFeatured);
+// const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 ---
 
 <BaseLayout
